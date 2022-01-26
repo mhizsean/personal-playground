@@ -228,6 +228,13 @@ const characters = [
 //     }
 // }
 
+// |
+// |
+// |
+// |
+// |
+// |
+// |
 
 
 
@@ -243,11 +250,29 @@ const characters = [
 //         console.log(error)
 //     })
 
+
+
+// const loadData = async () => {
+//     const baseUrl = `https://jsonplaceholder.typicode.com/todos/1`;
+//     const res = await fetch(baseUrl);
+//     const data = await res.json();
+//     console.log(data);
+// }
+
+// loadData()
+
+
 const loadData = async () => {
-    const baseUrl = `https://jsonplaceholder.typicode.com/todos/1`;
-    const res = await fetch(baseUrl);
-    const data = await res.json();
-    console.log(data);
+    try {
+        const baseUrl = `https://jsonplaceholder.typicode.com/todos/1`;
+        const res = await fetch(baseUrl);
+        console.log(res, "response") //checking the data 
+        console.log(res.status, "response status code") //god to check status
+        const data = await res.json();
+        console.log(data);
+    } catch(err) {
+        console.error(err)
+    }
 }
 
 loadData()
